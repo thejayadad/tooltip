@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+#box{
+    position: relative;
+    cursor: pointer;
+    padding: 7px;
+    font-size: 2rem;
+}
+
+#tip{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background-color: orange;
+    color: #fff;
+    white-space: nowrap;
+    padding: 10px 15px;
+    border-radius: 7px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+#tip::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: 15px solid;
+}
+
+#box:hover #tip{
+    top: -130%;
+    visibility: visible;
+    opacity: 1;
+}
